@@ -6,7 +6,6 @@ import Typography from "@mui/material/Typography";
 import CheckCard from "../CheckCard/CheckCard.js";
 //import Total from "../Total/Total.js";
 import products from "../../Product-data.js";
-import Products from "../Product/Product.js";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -24,7 +23,7 @@ const CheckPage = () => {
       <React.Fragment>
         {products.map((item) => (
           <Grid item xs={12} sm={8} md={6} lg={4}>
-            <Products key={item.id} product={item} />
+            <CheckCard key={item.id} product={item} />
           </Grid>
         ))}
       </React.Fragment>
