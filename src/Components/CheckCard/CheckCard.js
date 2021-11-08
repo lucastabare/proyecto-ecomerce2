@@ -49,7 +49,7 @@ function CheckCard({ product: { id, name, price, image } }) {
       />
       <CardActions className={classes.cardActions}>
         <IconButton>
-          <DeleteIcon fontSize="large" />
+          <DeleteIcon fontSize="large" color="secondary" />
         </IconButton>
       </CardActions>
     </Card>

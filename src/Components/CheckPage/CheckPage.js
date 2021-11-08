@@ -4,7 +4,7 @@ import Grid from "@material-ui/core/Grid";
 import Typography from "@mui/material/Typography";
 //import { useStateValue } from "../StateProvider";
 import CheckCard from "../CheckCard/CheckCard.js";
-//import Total from "../Total/Total.js";
+import Total from "../Total/Total.js";
 import products from "../../Product-data.js";
 
 const useStyles = makeStyles((theme) => ({
@@ -42,7 +42,7 @@ const CheckPage = () => {
         </Grid>
         <Grid item xs={12} sm={4} md={3} container spacing={2}>
           <Typography align="center" gutterBottom variant="h4">
-            {/* <Total /> */}Total
+            <Total />
           </Typography>
         </Grid>
       </Grid>
