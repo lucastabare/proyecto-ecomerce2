@@ -6,7 +6,7 @@ import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { CardActions, IconButton } from "@mui/material";
 import accounting from "accounting";
-import DeleteIcon from "@material-ui/icons/Delete";
+import DeleteIcon from "@mui/icons-material/Delete";
 
 const useStyles = makeStyles((theme) => ({
   root: {
