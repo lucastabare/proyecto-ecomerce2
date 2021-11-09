@@ -8,8 +8,8 @@ import logo from "../../assets/logo.png";
 import { Button } from "@mui/material";
 import { Badge } from "@material-ui/core";
 import { ShoppingCart } from "@mui/icons-material";
+import { Link } from "react-router-dom";
 //import { useStateValue } from "../StateProvider";
-//import { Link, useHistory } from "react-router-dom";
 //import { auth } from "../firebase";
 //import { actionTypes } from "../reducer";
 
@@ -93,18 +93,20 @@ function NavBar() {
     <div className={classes.root}>
       <AppBar position="fixed" className={classes.appBar}>
         <ToolBar>
-          <IconButton
-            edge="start"
-            className={classes.menuButton}
-            color="inherit"
-          >
-            <img
-              src={logo}
-              alt="Commerce.js"
-              height="80px"
-              className={classes.image}
-            />
-          </IconButton>
+          <Link to="/">
+            <IconButton
+              edge="start"
+              className={classes.menuButton}
+              color="inherit"
+            >
+              <img
+                src={logo}
+                alt="Commerce.js"
+                height="80px"
+                className={classes.image}
+              />
+            </IconButton>
+          </Link>
           <div className={classes.grow} />
           <Typography variant="h6" color="textPrimary" component="p">
             Hola User
@@ -113,11 +115,13 @@ function NavBar() {
             <Button variant="outlined">
               <strong>Iniciar Sesion</strong>
             </Button>
-            <IconButton aria-label="show cart items" color="inherit">
-              <Badge badgeContent={2} color="secondary">
-                <ShoppingCart fontSize="large" color="primary" />
-              </Badge>
-            </IconButton>
+            <Link to="/carrito">
+              <IconButton aria-label="show cart items" color="inherit">
+                <Badge badgeContent={2} color="secondary">
+                  <ShoppingCart fontSize="large" color="primary" />
+                </Badge>
+              </IconButton>
+            </Link>
           </div>
         </ToolBar>
       </AppBar>
