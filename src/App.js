@@ -1,17 +1,22 @@
 import "./App.css";
-//import CheckPage from "./Components/CheckPage/CheckPage";
+import CheckPage from "./Components/CheckPage/CheckPage";
 import NavBar from "./Components/NavBar/NavBar";
-import Products from "./Components/Product/Product.js";
 import ProductList from "./Components/ProductList/ProductList";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
-      <NavBar />
-      {/*  <CheckPage /> */}
-      <ProductList />
-      <Products />
-    </div>
+    <>
+      <Router>
+        <div className="App">
+          <NavBar />
+          <Switch>
+            <Route path="/carrito" exact component={CheckPage} />
+            <Route path="/" exact component={ProductList} />
+          </Switch>
+        </div>
+      </Router>
+    </>
   );
 }
 
