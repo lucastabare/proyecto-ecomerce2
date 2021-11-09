@@ -5,12 +5,11 @@ import { Button } from "@mui/material";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    maxWidth: 345,
     display: "flex",
     flexDirection: "column",
-    justifyContent:"center",
-    alignItems:"center",
-    height:"20vh"
+    justifyContent: "center",
+    alignItems: "center",
+    height: "20vh",
   },
   button: {
     marginTop: "2rem",
