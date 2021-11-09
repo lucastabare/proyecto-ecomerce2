@@ -2,10 +2,9 @@ import React from "react";
 import { makeStyles } from "@mui/styles";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@mui/material/Typography";
-//import { useStateValue } from "../StateProvider";
+import { useStateValue } from "../../StateProvider";
 import CheckCard from "../CheckCard/CheckCard.js";
 import Total from "../Total/Total.js";
-import products from "../../Product-data.js";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -16,12 +15,12 @@ const useStyles = makeStyles((theme) => ({
 
 const CheckPage = () => {
   const classes = useStyles();
-  //const [{ basket }, dispatch] = useStateValue();
+  const [{ basket }, dispatch] = useStateValue();
 
   function FormRow() {
     return (
       <React.Fragment>
-        {products.map((item) => (
+        {basket?.map((item) => (
           <Grid item xs={12} sm={8} md={6} lg={4}>
             <CheckCard key={item.id} product={item} />
           </Grid>

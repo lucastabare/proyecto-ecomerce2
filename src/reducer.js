@@ -3,13 +3,13 @@ export const initialState = {
 };
 
 export const actionTypes = {
-  ADD_TO_BASKET: "AGREGADO AL CARRITO",
+  ADD_TO_BASKET: "ADD_TO_BASKET",
 };
 
 const reducer = (state, action) => {
   console.log(action);
   switch (action.type) {
-    case "AGREGADO AL CARRITO":
+    case "ADD_TO_BASKET":
       return {
         ...state,
         basket: [...state.basket, action.item],
