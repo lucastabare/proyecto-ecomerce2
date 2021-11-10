@@ -1,4 +1,3 @@
-let basket = []
 export const initialState = {
   basket: {},
 };

@@ -25,15 +25,14 @@ const ExpandMore = styled((props) => {
   }),
 }));
 
-export default function Product({
+function Product({
   product: { id, name, productType, price, description, image },
 }) {
   const [expanded, setExpanded] = React.useState(false);
-
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
-  const [{ basket },dispatch] = useStateValue();
+  const [{ basket }, dispatch] = useStateValue();
 
   const agregarAlCarrito = () => {
     dispatch({
@@ -93,3 +92,5 @@ export default function Product({
     </Card>
   );
 }
+
+export default Product;
