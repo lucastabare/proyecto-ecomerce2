@@ -1,5 +1,6 @@
+let basket = []
 export const initialState = {
-  basket: [],
+  basket: {},
 };
 
 export const actionTypes = {

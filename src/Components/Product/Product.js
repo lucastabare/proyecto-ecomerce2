@@ -33,7 +33,7 @@ export default function Product({
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
-  const [{ basket }, dispatch] = useStateValue();
+  const [{ basket },dispatch] = useStateValue();
 
   const agregarAlCarrito = () => {
     dispatch({

@@ -2,7 +2,8 @@ import "./App.css";
 import CheckPage from "./Components/CheckPage/CheckPage";
 import NavBar from "./Components/NavBar/NavBar";
 import ProductList from "./Components/ProductList/ProductList";
-import {Router, Switch, Route } from "react-router";
+import { Switch, Route } from "react-router";
+import {BrowserRouter as Router} from "react-router-dom"
 
 function App() {
   return (
