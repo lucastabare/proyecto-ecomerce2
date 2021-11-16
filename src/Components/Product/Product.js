@@ -38,12 +38,12 @@ function Product({
     dispatch({
       type: actionTypes.ADD_TO_BASKET,
       item: {
-        id: id,
-        name: name,
-        productType: productType,
-        image: image,
-        price: price,
-        description: description,
+        id,
+        name,
+        productType,
+        image,
+        price,
+        description,
       },
     });
   };
@@ -72,7 +72,7 @@ function Product({
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
-        <IconButton aria-label="Add to Cart" onClick={agregarAlCarrito}>
+        <IconButton aria-label="Agregar al carrito" onClick={agregarAlCarrito}>
           <AddShoppingCart fontSize="large" />
         </IconButton>
         <ExpandMore
