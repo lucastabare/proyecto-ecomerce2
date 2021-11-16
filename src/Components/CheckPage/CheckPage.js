@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
 
 const CheckPage = () => {
   const classes = useStyles();
-  const [{ basket }] = useStateValue();
+  const [{ basket }, dispatch] = useStateValue();
 
   function FormRow() {
     return (

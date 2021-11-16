@@ -9,7 +9,7 @@ import { Button } from "@mui/material";
 import { Badge } from "@material-ui/core";
 import { ShoppingCart } from "@mui/icons-material";
 import { Link } from "react-router-dom";
-//import { useStateValue } from "../StateProvider";
+import { useStateValue } from "../../StateProvider";
 //import { auth } from "../firebase";
 //import { actionTypes } from "../reducer";
 
@@ -88,6 +88,7 @@ const useStyles = makeStyles((theme) => ({
 
 function NavBar() {
   const classes = useStyles();
+  const [{ basket }, dispatch] = useStateValue();
 
   return (
     <div className={classes.root}>
@@ -117,7 +118,7 @@ function NavBar() {
             </Button>
             <Link to="/carrito">
               <IconButton aria-label="show cart items" color="inherit">
-                <Badge badgeContent={2} color="secondary">
+                <Badge badgeContent={basket?.length} color="secondary">
                   <ShoppingCart fontSize="large" color="primary" />
                 </Badge>
               </IconButton>

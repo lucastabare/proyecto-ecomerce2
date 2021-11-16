@@ -7,6 +7,8 @@ import Typography from "@mui/material/Typography";
 import { CardActions, IconButton } from "@mui/material";
 import accounting from "accounting";
 import DeleteIcon from "@mui/icons-material/Delete";
+import { useStateValue } from "../../StateProvider";
+import { actionTypes } from "../../reducer";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -28,6 +30,13 @@ const useStyles = makeStyles((theme) => ({
 
 function CheckCard({ product: { id, name, price, image } }) {
   const classes = useStyles();
+  const [{ basket }, dispatch] = useStateValue();
+
+  const eliminarItem = () =>
+    dispatch({
+      type: actionTypes.REMOVE_ITEM,
+      id,
+    });
 
   return (
     <Card sx={{ maxWidth: 345 }}>
@@ -49,7 +58,11 @@ function CheckCard({ product: { id, name, price, image } }) {
       />
       <CardActions className={classes.cardActions}>
         <IconButton>
-          <DeleteIcon fontSize="large" color="secondary" />
+          <DeleteIcon
+            fontSize="large"
+            color="secondary"
+            onClick={eliminarItem}
+          />
         </IconButton>
       </CardActions>
     </Card>
