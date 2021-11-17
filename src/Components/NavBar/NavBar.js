@@ -88,7 +88,7 @@ const useStyles = makeStyles((theme) => ({
 
 function NavBar() {
   const classes = useStyles();
-  const [{ basket }, dispatch] = useStateValue();
+  const [{ basket }] = useStateValue();
 
   return (
     <div className={classes.root}>
@@ -113,9 +113,11 @@ function NavBar() {
             Hola User
           </Typography>
           <div className={classes.button}>
-            <Button variant="outlined">
-              <strong>Iniciar Sesion</strong>
-            </Button>
+            <Link to="/singin">
+              <Button variant="outlined">
+                <strong>Iniciar Sesion</strong>
+              </Button>
+            </Link>
             <Link to="/carrito">
               <IconButton aria-label="show cart items" color="inherit">
                 <Badge badgeContent={basket?.length} color="secondary">

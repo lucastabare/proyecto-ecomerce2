@@ -7,7 +7,7 @@ export const actionTypes = {
   REMOVE_ITEM: "REMOVE_ITEM",
 };
 
-export const totalProducts = (basket) => {
+export const totalBasket = (basket) => {
   basket?.reduce((amount, item) => item.price + amount, 0);
 };
 
