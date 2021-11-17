@@ -12,6 +12,7 @@ import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { Link as RouteLink, useHistory } from "react-router-dom";
 
 function Copyright(props) {
   return (
@@ -130,9 +131,9 @@ export default function SingUp() {
             </Button>
             <Grid container justifyContent="flex-end">
               <Grid item>
-                <Link href="#" variant="body2">
-                  ¿Ya tienes una cuenta? Inciar Secion
-                </Link>
+                <RouteLink to="/singin">
+                  ¿Ya tienes una cuenta? Inciar Sesion
+                </RouteLink>
               </Grid>
             </Grid>
           </Box>

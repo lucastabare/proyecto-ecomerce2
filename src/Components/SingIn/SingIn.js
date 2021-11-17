@@ -12,6 +12,7 @@ import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { Link as RouteLink, useHistory } from "react-router-dom";
 
 function Copyright(props) {
   return (
@@ -60,7 +61,7 @@ export default function SingIn() {
             <LockOutlinedIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
-            Sign in
+            Iniciar Sesion
           </Typography>
           <Box
             component="form"
@@ -107,9 +108,9 @@ export default function SingIn() {
                 </Link>
               </Grid>
               <Grid item>
-                <Link href="#" variant="body2">
+                <RouteLink to="/singup">
                   {"¿No tienes una cuenta? Regístrate"}
-                </Link>
+                </RouteLink>
               </Grid>
             </Grid>
           </Box>
