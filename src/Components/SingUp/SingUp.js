@@ -14,8 +14,7 @@ import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { Link as RouteLink, useHistory } from "react-router-dom";
-import { authh } from "../../firebase";
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import { useAuth } from "../../Context/AuthContext";
 
 function Copyright(props) {
   return (
@@ -38,21 +37,28 @@ function Copyright(props) {
 const theme = createTheme();
 
 export default function SingUp() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const { singup } = useAuth();
   const history = useHistory();
 
-  const singup = (e) => {
+  const [error, setError] = useState(null);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  //const [confirmPassword, setConfirmPassword] = useState("");
+
+  const handleEmail = (e) => setEmail(e.target.value);
+  const handlePassword = (e) => setPassword(e.target.value);
+  //const handleConfirmPassword = (e) => setConfirmPassword(e.target.value);
+
+  const handleSubmit = async (e) => {
+    console.log("hola");
     e.preventDefault();
-    authh
-      .createUserWithEmailAndPassword(email, password)
-      .the((auth) => {
-        console.log(authh);
-        if (authh) {
-          history.push("/");
-        }
-      })
-      .catch((err) => alert(err.message));
+    try {
+      await singup(email, password);
+      history.push("/");
+    } catch (error) {
+      setError("Server Error");
+      setTimeout(() => setError(""), 1500);
+    }
   };
 
   return (
@@ -104,7 +110,7 @@ export default function SingUp() {
               <Grid item xs={12}>
                 <TextField
                   value={email}
-                  onChange={(e) => setEmail(e.target.value)}
+                  onChange={handleEmail}
                   required
                   fullWidth
                   id="email"
@@ -116,7 +122,7 @@ export default function SingUp() {
               <Grid item xs={12}>
                 <TextField
                   value={password}
-                  onChange={(e) => setPassword(e.target.value)}
+                  onChange={handlePassword}
                   required
                   fullWidth
                   name="Contraseña"
@@ -136,7 +142,7 @@ export default function SingUp() {
               </Grid>
             </Grid>
             <Button
-              onClick={singup}
+              onClick={handleSubmit}
               type="submit"
               fullWidth
               variant="contained"
